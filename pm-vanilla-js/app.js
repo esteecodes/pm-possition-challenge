@@ -33,6 +33,8 @@ searchBtn.addEventListener("click", () => {
             // }
 		});
 
+		clear ();
+
 	// if (!input.value) {
 	// 	createdDiv.innerText = "No products Faked yet..";
 	// 	myFilteredArray = [];
@@ -42,12 +44,20 @@ searchBtn.addEventListener("click", () => {
 	// 	createdDiv.innerHTML = `<div>${myFilteredArray}</div>`;
 	// }
 
+	// for (const container of document.querySelectorAll(".container")) {
+	// 	if (container.querySelectorAll("div").length > 0) {
+	// 		container.removeChild(container.firstChild);
+	// 	}
+	// }
+});
+
+function clear () {
 	for (const container of document.querySelectorAll(".container")) {
 		if (container.querySelectorAll("div").length > 0) {
 			container.removeChild(container.firstChild);
 		}
 	}
-});
+}
 
 // function getFakeProducts() {
 // 	fetch("https://fakerapi.it/api/v1/products")
