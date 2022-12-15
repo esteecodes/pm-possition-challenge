@@ -9,18 +9,13 @@ searchBtn.addEventListener("click", () => {
 	fetch("https://fakerapi.it/api/v1/products")
 		.then((response) => response.json())
 		.then((items) => {
-
-
-
 			if (!input.value || input.value == 0) {
 				container.innerHTML = `
 				<div class="message">
 				<p>No products Faked yet..</p>
 				</div>
 				`;
-			}
-
-			else if (input.value == 1) {
+			} else if (input.value == 1) {
 				const oneItem = items.data.slice(0, 1);
 				oneItem.forEach(createBox);
 			} else if (input.value == 2) {
@@ -69,9 +64,10 @@ function createBox(items) {
 
 	const { image, name, price, tags, images } = items;
 
-	const formattedAmount = Number(price).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
-	
-
+	const formattedAmount = Number(price).toLocaleString("de-DE", {
+		style: "currency",
+		currency: "EUR",
+	});
 
 	box.classList.add("box");
 	box.innerHTML = `
@@ -79,39 +75,38 @@ function createBox(items) {
 	`;
 	container.appendChild(box);
 
-	// Thumbnails 
+	// Thumbnails
 	const thumbsWrapper = document.createElement("div");
 	thumbsWrapper.classList.add("thumbs-wrapper");
 	box.appendChild(thumbsWrapper);
 
-	images.forEach(item => {
-		const thumb = document.createElement('img');
+	images.forEach((item) => {
+		const thumb = document.createElement("img");
 		thumb.classList.add("thumb");
 		thumb.src = item.url;
 		thumbsWrapper.appendChild(thumb);
-	  });
+	});
 
-	// Product Info 
-	  const productInfo = document.createElement("div");
-	  productInfo.classList.add("product-info");
-	  productInfo.innerHTML = `
+	// Product Info
+	const productInfo = document.createElement("div");
+	productInfo.classList.add("product-info");
+	productInfo.innerHTML = `
 	  <p class="product-name">${name}</p>
 	  <p class="product-price">${formattedAmount}</p>
-	  `
-	  box.appendChild(productInfo);
+	  `;
+	box.appendChild(productInfo);
 
-	  // Product Tags 
-	  const productTags = document.createElement("div");
-	  productTags.classList.add("product-tags");
-	  box.appendChild(productTags);
-  
-	  tags.forEach(item => {
-		  const tag = document.createElement('div');
-		  tag.classList.add("tag");
-		  tag.innerHTML = item;
-		  productTags.appendChild(tag);
-		});
-  
+	// Product Tags
+	const productTags = document.createElement("div");
+	productTags.classList.add("product-tags");
+	box.appendChild(productTags);
+
+	tags.forEach((item) => {
+		const tag = document.createElement("div");
+		tag.classList.add("tag");
+		tag.innerHTML = item;
+		productTags.appendChild(tag);
+	});
 }
 
 // Clear loaded products
