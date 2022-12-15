@@ -59,7 +59,7 @@ searchBtn.addEventListener("click", () => {
 				container.innerHTML = `
 				<div class="message">
 				<p>Maximum product amount exceeded...</p>
-				<p>We  only supply up to 10 products at this point.</p>
+				<p>We can only supply up to 10 products at this point.</p>
 				</div>
 				`;
 			}

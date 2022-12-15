@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
+  background: radial-gradient(#ebebeb, #adadad);
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
   margin: 0;
@@ -33,6 +34,11 @@ body main .search input {
   margin: 0.4rem;
   line-height: 1.5rem;
   font-size: 1rem;
+  padding-left: 0.5rem;
+}
+body main .search input:focus {
+  outline: 2px solid rgba(43, 131, 255, 0.4431372549);
+  border-radius: 0.2rem;
 }
 body main .search button {
   background-color: #016bfd;
@@ -52,6 +58,9 @@ body main .container {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+body main .container .message {
+  text-align: center;
 }
 body main .container .box {
   display: flex;
@@ -91,7 +100,7 @@ body main .container .box .product-info .product-tags {
   width: 100%;
 }
 body .footer {
-  background-color: #818181;
+  background-color: #5a5a5a;
   color: #dddddd;
   display: flex;
   align-items: center;
