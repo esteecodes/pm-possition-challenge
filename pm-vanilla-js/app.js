@@ -6,38 +6,53 @@ const searchBtn = document.getElementById("searchBtn");
 
 
 searchBtn.addEventListener("click", () => {
-    let myFilteredArray = [];
 
 	fetch("https://fakerapi.it/api/v1/products")
 		.then((response) => response.json())
 		.then((items) => {
 
-
-			console.log(items.data);
-
-			// items.data.forEach(createBox);
-			// myFilteredArray.push(data.data);
-
-			// console.log(myFilteredArray)
-
 			if (!input.value ||input.value == 0 ) {
-				container.innerHTML = `<p>No products Faked yet..</p>`;
+				container.innerHTML = `
+				<div class="message">
+				<p>No products Faked yet..</p>
+				</div>
+				`;
 			} 
 			
+			else if (input.value == 1) {
+				const fiveItems = items.data.slice(0, 1);
+				console.log(fiveItems);
+				fiveItems.forEach(createBox);
+			} 
+			else if (input.value == 2) {
+				const fiveItems = items.data.slice(0, 2);
+				console.log(fiveItems);
+				fiveItems.forEach(createBox);
+			} 
+			else if (input.value == 3) {
+				const fiveItems = items.data.slice(0, 3);
+				console.log(fiveItems);
+				fiveItems.forEach(createBox);
+			} 
+			else if (input.value == 4) {
+				const fiveItems = items.data.slice(0, 4);
+				console.log(fiveItems);
+				fiveItems.forEach(createBox);
+			} 
 			else if (input.value == 5) {
 				const fiveItems = items.data.slice(0, 5);
 				console.log(fiveItems);
 				fiveItems.forEach(createBox);
 			} 
-//             else if ((input.value == 2)) {
-// 				myFilteredArray.push(data.data[0,1]);
-//                 let description = myFilteredArray.map(el => el.description);
-//                 createdDiv.innerHTML = description;
-//                 console.log(myFilteredArray);
-// 			} 
-// 			else {
-//                 createdDiv.innerText = "No!";
-//             }
+
+			else {
+				container.innerHTML = `
+				<div class="message">
+				<p>Maximum product amount exceeded...</p>
+				<p>Currently we can only supply up to 5 products.</p>
+				</div>
+				`;
+            }
 		});
 
 		clear ();
@@ -58,11 +73,13 @@ function createBox(items) {
 	  container.appendChild(box);
   }
 
-
+// Clear loaded products
 function clear () {
-	for (const container of document.querySelectorAll(".container")) {
-		if (container.querySelectorAll("div").length > 0) {
-			container.removeChild(container.firstChild);
-		}
-	}
+	const loadedProducts = container.querySelectorAll("div");
+
+	if (loadedProducts.length > 0 ) {
+		loadedProducts.forEach( (product) => {
+			product.remove();
+		})
+	}	
 }
