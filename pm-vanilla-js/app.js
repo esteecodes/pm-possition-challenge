@@ -18,38 +18,55 @@ searchBtn.addEventListener("click", () => {
 				</div>
 				`;
 			} 
+
+			// maybe switch statements for here
 			
 			else if (input.value == 1) {
-				const fiveItems = items.data.slice(0, 1);
-				console.log(fiveItems);
-				fiveItems.forEach(createBox);
+				const oneItem = items.data.slice(0, 1);
+				oneItem.forEach(createBox);
 			} 
 			else if (input.value == 2) {
-				const fiveItems = items.data.slice(0, 2);
-				console.log(fiveItems);
-				fiveItems.forEach(createBox);
+				const twoItems = items.data.slice(0, 2);
+				twoItems.forEach(createBox);
 			} 
 			else if (input.value == 3) {
-				const fiveItems = items.data.slice(0, 3);
-				console.log(fiveItems);
-				fiveItems.forEach(createBox);
+				const threeItems = items.data.slice(0, 3);
+				threeItems.forEach(createBox);
 			} 
 			else if (input.value == 4) {
-				const fiveItems = items.data.slice(0, 4);
-				console.log(fiveItems);
-				fiveItems.forEach(createBox);
+				const fourItems = items.data.slice(0, 4);
+				fourItems.forEach(createBox);
 			} 
 			else if (input.value == 5) {
 				const fiveItems = items.data.slice(0, 5);
 				console.log(fiveItems);
 				fiveItems.forEach(createBox);
 			} 
+			else if (input.value == 6) {
+				const sixItems = items.data.slice(0, 6);
+				sixItems.forEach(createBox);
+			} 
+			else if (input.value == 7) {
+				const sevenItems = items.data.slice(0, 7);
+				sevenItems.forEach(createBox);
+			} 
+			else if (input.value == 8) {
+				const eightItems = items.data.slice(0, 8);
+				eightItems.forEach(createBox);
+			} 
+			else if (input.value == 9) {
+				const nineItems = items.data.slice(0, 9);
+				nineItems.forEach(createBox);
+			} 
+			else if (input.value == 10) {
+				items.data.forEach(createBox);
+			} 
 
 			else {
 				container.innerHTML = `
 				<div class="message">
 				<p>Maximum product amount exceeded...</p>
-				<p>Currently we can only supply up to 5 products.</p>
+				<p>We  only supply up to 10 products at this point.</p>
 				</div>
 				`;
             }
