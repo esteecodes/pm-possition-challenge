@@ -4,14 +4,26 @@ const search = document.querySelector(".search");
 const searchBtn = document.getElementById("searchBtn");
 
 
-
 searchBtn.addEventListener("click", () => {
 
 	fetch("https://fakerapi.it/api/v1/products")
 		.then((response) => response.json())
 		.then((items) => {
 
-			if (!input.value ||input.value == 0 ) {
+
+			// items.data.images.forEach(createThumbs);
+
+
+			// items.data.images.forEach(el => {
+			// 		// const thumbs = el.images
+			// 		el(createThumbs);
+
+					// thumbsArr.push(thumbs)
+					// console.log(thumbsArr.forEach(el => el.url));
+
+				// })
+
+			if (!input.value || input.value == 0 ) {
 				container.innerHTML = `
 				<div class="message">
 				<p>No products Faked yet..</p>
@@ -72,23 +84,26 @@ searchBtn.addEventListener("click", () => {
             }
 		});
 
+		const thumbs = items.data.images;
+		thumbs.forEach(createThumbs);
 		clear ();
 });
 
 // Create boxes
 function createBox(items) {
 	const box = document.createElement("div");
+	
+
+	// const thumbnail = items.images.forEach(image => image.url)
+	// console.log(thumbnail);
   
 	const { image, name, price, tags } = items;
 	// instead of using item.image & item.text
-  
+
 	box.classList.add("box");
 	box.innerHTML = `
 	<img class="mainImage" src="${image}" alt="artificial product"/>
-		<div class="thumb-wrapper">
-			<img class="thumbnail" src="${image}" alt="artificial product"/>
-			<img class="thumbnail" src="${image}" alt="artificial product"/>
-			<img class="thumbnail" src="${image}" alt="artificial product"/>
+		<div class="thumbs-wrapper">
 		</div>
 		<div class="product-info">
 		<p class="product-name">"${name}"</p>
@@ -98,6 +113,26 @@ function createBox(items) {
 	
 	`;
 	  container.appendChild(box);
+
+	//   const thumbs = document.createElement("img");
+	//   const thumbsWrapper = document.querySelector(".thumbs-wrapper");
+
+	//   thumbs.classList.add("thumb");
+	  
+	//   thumbsWrapper.appendChild(thumbs);
+	//   thumbs.outerHTML = `<img class="thumb-test" src="${image}" />`
+
+  }
+
+  function createThumbs(el) {
+	  const thumbs = document.createElement("img");
+	  const thumbsWrapper = document.querySelector(".thumbs-wrapper");
+
+	  thumbs.classList.add("thumb");
+	  
+	  thumbsWrapper.appendChild(thumbs);
+	  thumbs.outerHTML = `<img class="thumb-test" src="${image}" />`
+
   }
 
 // Clear loaded products

@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
 }
 body main {
-  min-height: 85vh;
+  min-height: 89vh;
   min-width: 80vw;
   display: flex;
   flex-direction: column;
