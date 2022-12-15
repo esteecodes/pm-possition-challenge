@@ -79,7 +79,7 @@ searchBtn.addEventListener("click", () => {
 function createBox(items) {
 	const box = document.createElement("div");
   
-	const { image, description } = items;
+	const { image, name, price, tags } = items;
 	// instead of using item.image & item.text
   
 	box.classList.add("box");
@@ -89,9 +89,13 @@ function createBox(items) {
 			<img class="thumbnail" src="${image}" alt="artificial product"/>
 			<img class="thumbnail" src="${image}" alt="artificial product"/>
 			<img class="thumbnail" src="${image}" alt="artificial product"/>
-			<img class="thumbnail" src="${image}" alt="artificial product"/>
 		</div>
-	<p>"${description}"</p>
+		<div class="product-info">
+		<p class="product-name">"${name}"</p>
+		<p class="product-price">"${price}"</p>
+		<p class="product-tags">"${tags}"</p>
+		</div>
+	
 	`;
 	  container.appendChild(box);
   }
