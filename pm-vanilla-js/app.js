@@ -19,7 +19,6 @@ searchBtn.addEventListener("click", () => {
 
 			if (!input.value) {
 				container.innerHTML = `<p>No products Faked yet..</p>`;
-				// myFilteredArray = [];
 			} 
 			
 			else if (input.value == 1) {
