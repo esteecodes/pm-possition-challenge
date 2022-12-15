@@ -10,23 +10,24 @@ searchBtn.addEventListener("click", () => {
 
 	fetch("https://fakerapi.it/api/v1/products")
 		.then((response) => response.json())
-		.then((data) => {
+		.then((items) => {
 
-			data.data.forEach(createBox);
-			myFilteredArray.push(data.data)
+
+			console.log(items.data);
+
+			// items.data.forEach(createBox);
+			// myFilteredArray.push(data.data);
 
 			// console.log(myFilteredArray)
 
-			if (!input.value) {
+			if (!input.value ||input.value == 0 ) {
 				container.innerHTML = `<p>No products Faked yet..</p>`;
 			} 
 			
-			else if (input.value == 1) {
-				let name = myFilteredArray
-				console.log(myFilteredArray)
-
-				container.innerHTML = `<div>hello</div>`;
-
+			else if (input.value == 5) {
+				const fiveItems = items.data.slice(0, 5);
+				console.log(fiveItems);
+				fiveItems.forEach(createBox);
 			} 
 //             else if ((input.value == 2)) {
 // 				myFilteredArray.push(data.data[0,1]);
@@ -43,10 +44,10 @@ searchBtn.addEventListener("click", () => {
 });
 
 // Create boxes
-function createBox(data) {
+function createBox(items) {
 	const box = document.createElement("div");
   
-	const { image, description } = data;
+	const { image, description } = items;
 	// instead of using item.image & item.text
   
 	box.classList.add("box");
@@ -65,14 +66,3 @@ function clear () {
 		}
 	}
 }
-
-// function getFakeProducts() {
-// 	fetch("https://fakerapi.it/api/v1/products")
-// 		.then((response) => response.json())
-// 		.then((data) =>
-//         myFilteredArray.push(data)
-//         );
-//         console.log(myFilteredArray)
-// }
-
-// console.log(getFakeProducts());
