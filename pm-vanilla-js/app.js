@@ -10,6 +10,8 @@ searchBtn.addEventListener("click", () => {
 		.then((response) => response.json())
 		.then((items) => {
 
+
+
 			if (!input.value || input.value == 0) {
 				container.innerHTML = `
 				<div class="message">
@@ -65,7 +67,7 @@ searchBtn.addEventListener("click", () => {
 function createBox(items) {
 	const box = document.createElement("div");
 
-	const { image, name, price, tags } = items;
+	const { image, name, price, tags, images } = items;
 
 	const formattedAmount = Number(price).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 	
@@ -74,17 +76,23 @@ function createBox(items) {
 	box.classList.add("box");
 	box.innerHTML = `
 	<img class="mainImage" src="${image}" alt="artificial product"/>
-		<div class="thumbs-wrapper">
-		<img class="thumbnail" src="${image}" alt=""/>
-		<img class="thumbnail" src="${image}" alt=""/>
-		<img class="thumbnail" src="${image}" alt=""/>
-		</div>
 		<div class="product-info">
 			<p class="product-name">${name}</p>
 			<p class="product-price">${formattedAmount}</p>
 		</div>
 	`;
 	container.appendChild(box);
+
+	const thumbsWrapper = document.createElement("div");
+	thumbsWrapper.classList.add("thumbs-wrapper");
+	box.appendChild(thumbsWrapper);
+
+	images.forEach(item => {
+		const thumb = document.createElement('img');
+		thumb.classList.add("thumb");
+		thumb.src = item.url;
+		thumbsWrapper.appendChild(thumb);
+	  });
 
 	const productTags = document.createElement("div");
 	productTags.classList.add("product-tags");
@@ -96,6 +104,7 @@ function createBox(items) {
 		tag.innerHTML = item;
 		productTags.appendChild(tag);
 	  });
+
 }
 
 // Clear loaded products

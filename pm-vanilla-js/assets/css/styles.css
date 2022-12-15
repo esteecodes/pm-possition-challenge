@@ -74,7 +74,7 @@ body main .container .box img {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-body main .container .box img.thumbnail {
+body main .container .box img.thumb {
   width: 100px;
   height: 70px;
   margin-right: 0.5rem;
