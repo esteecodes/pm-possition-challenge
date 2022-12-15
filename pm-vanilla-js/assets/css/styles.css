@@ -78,13 +78,14 @@ body main .container .box .product-info {
   align-items: center;
 }
 body main .container .box .product-info .product-name {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 body main .container .box .product-info .product-price {
   color: #016bfd;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  margin-right: 1rem;
 }
 body main .container .box .product-info .product-tags {
   width: 100%;

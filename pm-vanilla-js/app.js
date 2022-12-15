@@ -75,7 +75,7 @@ function createBox(items) {
 	const { image, name, price, tags } = items;
 
 	const formattedAmount = Number(price).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
-
+	
 	box.classList.add("box");
 	box.innerHTML = `
 	<img class="mainImage" src="${image}" alt="artificial product"/>
