@@ -1,6 +1,7 @@
 const input = document.querySelector("input");
 const container = document.querySelector(".container");
 const thumbsWrapper = document.querySelector(".thumbs-wrapper");
+const productTags = document.querySelector(".product-tags");
 const search = document.querySelector(".search");
 const searchBtn = document.getElementById("searchBtn");
 
@@ -76,6 +77,8 @@ function createBox(items) {
 
 	const formattedAmount = Number(price).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 	
+
+
 	box.classList.add("box");
 	box.innerHTML = `
 	<img class="mainImage" src="${image}" alt="artificial product"/>
@@ -85,13 +88,22 @@ function createBox(items) {
 		<img class="thumbnail" src="${image}" alt=""/>
 		</div>
 		<div class="product-info">
-		<p class="product-name">${name}</p>
-		<p class="product-price">${formattedAmount}</p>
+			<p class="product-name">${name}</p>
+			<p class="product-price">${formattedAmount}</p>
 		</div>
-		<p class="product-tags">${tags}</p>
-	
 	`;
 	container.appendChild(box);
+
+	const productTags = document.createElement("div");
+	productTags.classList.add("product-tags");
+	box.appendChild(productTags);
+
+	tags.forEach(item => {
+		const tag = document.createElement('div');
+		tag.classList.add("tag");
+		tag.innerHTML = item;
+		productTags.appendChild(tag);
+	  });
 }
 
 // Clear loaded products
