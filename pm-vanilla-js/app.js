@@ -84,7 +84,13 @@ function createBox(items) {
   
 	box.classList.add("box");
 	box.innerHTML = `
-	<img src="${image}" alt="${description}"/>
+	<img class="mainImage" src="${image}" alt="artificial product"/>
+		<div class="thumb-wrapper">
+			<img class="thumbnail" src="${image}" alt="artificial product"/>
+			<img class="thumbnail" src="${image}" alt="artificial product"/>
+			<img class="thumbnail" src="${image}" alt="artificial product"/>
+			<img class="thumbnail" src="${image}" alt="artificial product"/>
+		</div>
 	<p>"${description}"</p>
 	`;
 	  container.appendChild(box);

@@ -12,13 +12,19 @@ body {
         align-items: center;
         justify-content: center;
 
-		h1 {
-            margin-top: 3rem;
+		.header {
+			margin: 2rem 0 1rem;
+			text-align: center;
+
+			h1 {
+				margin-bottom: 0;
+			}
 		}
+
 
         .search {
             width: 30vw;
-            margin: 0 auto;
+            margin: 2rem auto 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,6 +52,36 @@ body {
                 }
             }
         }
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.box {
+				display: flex;
+				flex-direction: column;
+				max-width: 30vw;
+				margin: 1rem;
+				
+				img {
+					border-radius: 0.5rem;
+					cursor: pointer;
+				}
+
+				.thumb-wrapper {
+					margin: 0.7rem 0;
+
+					.thumbnail {
+						width: 100px;
+						height: 70px;
+						margin-right: 0.5rem;
+					}
+				}
+
+			}
+		}
 	}
 
 	.footer {
