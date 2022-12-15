@@ -84,8 +84,8 @@ searchBtn.addEventListener("click", () => {
             }
 		});
 
-		const thumbs = items.data.images;
-		thumbs.forEach(createThumbs);
+		// const thumbs = items.data.images;
+		// thumbs.forEach(createThumbs);
 		clear ();
 });
 
