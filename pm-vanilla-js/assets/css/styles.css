@@ -67,6 +67,7 @@ body main .container .box {
   display: flex;
   flex-direction: column;
   max-width: 30vw;
+  height: 75vh;
   margin: 1rem;
 }
 body main .container .box img {
@@ -86,6 +87,8 @@ body main .container .box .product-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 2rem;
+  margin-bottom: 1.5rem;
 }
 body main .container .box .product-info .product-name {
   font-size: 1.2rem;
@@ -96,9 +99,6 @@ body main .container .box .product-info .product-price {
   font-size: 1.2rem;
   font-weight: 600;
   margin-right: 1rem;
-}
-body main .container .box .product-info .product-tags {
-  width: 100%;
 }
 body main .container .box .product-tags {
   display: flex;
