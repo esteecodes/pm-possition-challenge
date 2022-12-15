@@ -122,7 +122,17 @@ body {
 				}
 
 				.product-tags {
+					display: flex;
+					flex-wrap: wrap;
 
+					.tag {
+						background-color: grey;
+						color: #fff;
+						padding: 0.1rem 0.6rem 0.2rem;
+						margin: 0.3rem;
+						border-radius: 1rem;
+						cursor: pointer;
+					}
 				}
 
 			}

@@ -10,14 +10,6 @@ searchBtn.addEventListener("click", () => {
 		.then((response) => response.json())
 		.then((items) => {
 
-			// items.data.forEach((object) => {
-			// 	object.images.forEach((image) => {
-			// 		const imgElement = document.createElement("img");
-			// 		imgElement.src = image.url;
-			// 		container.appendChild(imgElement);
-			// 	});
-			// });
-
 			if (!input.value || input.value == 0) {
 				container.innerHTML = `
 				<div class="message">

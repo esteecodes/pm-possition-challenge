@@ -100,6 +100,18 @@ body main .container .box .product-info .product-price {
 body main .container .box .product-info .product-tags {
   width: 100%;
 }
+body main .container .box .product-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+body main .container .box .product-tags .tag {
+  background-color: grey;
+  color: #fff;
+  padding: 0.1rem 0.6rem 0.2rem;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
 body .footer {
   background-color: #5a5a5a;
   color: #dddddd;
