@@ -66,18 +66,20 @@ body {
 				margin: 1rem;
 				
 				img {
+					margin-bottom: 0.6rem;;
 					border-radius: 0.5rem;
 					cursor: pointer;
+
+					&.thumbnail {
+						width: 100px;
+						height: 70px;
+						margin-right: 0.5rem;
+					}
 				}
 
 				.thumb-wrapper {
 					margin: 0.7rem 0;
 
-					.thumbnail {
-						width: 100px;
-						height: 70px;
-						margin-right: 0.5rem;
-					}
 				}
 
 			}

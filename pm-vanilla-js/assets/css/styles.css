@@ -58,16 +58,17 @@ body main .container .box {
   margin: 1rem;
 }
 body main .container .box img {
+  margin-bottom: 0.6rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
-body main .container .box .thumb-wrapper {
-  margin: 0.7rem 0;
-}
-body main .container .box .thumb-wrapper .thumbnail {
+body main .container .box img.thumbnail {
   width: 100px;
   height: 70px;
   margin-right: 0.5rem;
+}
+body main .container .box .thumb-wrapper {
+  margin: 0.7rem 0;
 }
 body .footer {
   background-color: #818181;

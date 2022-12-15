@@ -8,6 +8,15 @@ searchBtn.addEventListener("click", () => {
 	fetch("https://fakerapi.it/api/v1/products")
 		.then((response) => response.json())
 		.then((items) => {
+
+			// items.data.forEach((object) => {
+			// 	object.images.forEach((image) => {
+			// 		const imgElement = document.createElement("img");
+			// 		imgElement.src = image.url;
+			// 		container.appendChild(imgElement);
+			// 	});
+			// });
+
 			if (!input.value || input.value == 0) {
 				container.innerHTML = `
 				<div class="message">
@@ -16,7 +25,6 @@ searchBtn.addEventListener("click", () => {
 				`;
 			}
 
-			// maybe switch statements for here
 			else if (input.value == 1) {
 				const oneItem = items.data.slice(0, 1);
 				oneItem.forEach(createBox);
@@ -70,6 +78,9 @@ function createBox(items) {
 	box.innerHTML = `
 	<img class="mainImage" src="${image}" alt="artificial product"/>
 		<div class="thumbs-wrapper">
+		<img class="thumbnail" src="${image}" alt=""/>
+		<img class="thumbnail" src="${image}" alt=""/>
+		<img class="thumbnail" src="${image}" alt=""/>
 		</div>
 		<div class="product-info">
 		<p class="product-name">"${name}"</p>
