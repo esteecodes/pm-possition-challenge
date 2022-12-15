@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
+  font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -69,6 +71,23 @@ body main .container .box img.thumbnail {
 }
 body main .container .box .thumb-wrapper {
   margin: 0.7rem 0;
+}
+body main .container .box .product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .container .box .product-info .product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+body main .container .box .product-info .product-price {
+  color: #016bfd;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+body main .container .box .product-info .product-tags {
+  width: 100%;
 }
 body .footer {
   background-color: #818181;
