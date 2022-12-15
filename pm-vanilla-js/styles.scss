@@ -90,14 +90,15 @@ body {
 				margin: 1rem;
 				
 				img {
-					margin-bottom: 0.6rem;;
+					box-shadow: 0 0 4px 2px #28282886;
+					margin-bottom: 0.8rem;
 					border-radius: 0.5rem;
 					cursor: pointer;
 
 					&.thumb {
 						width: 100px;
 						height: 70px;
-						margin-right: 0.5rem;
+						margin-right: 0.7rem;
 					}
 				}
 
@@ -133,7 +134,7 @@ body {
 					.tag {
 						background-color: grey;
 						color: #fff;
-						padding: 0.1rem 0.6rem 0.2rem;
+						padding: 0.1rem 0.6rem 0.3rem;
 						margin: 0.3rem;
 						border-radius: 1rem;
 						cursor: pointer;
