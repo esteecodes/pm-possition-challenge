@@ -72,7 +72,7 @@ body main .container .box {
   display: flex;
   flex-direction: column;
   width: 22vw;
-  height: 75vh;
+  height: 65vh;
   margin: 1rem;
 }
 body main .container .box img {
@@ -159,6 +159,7 @@ body .footer .social-links a {
 @media (min-width: 768px) and (max-width: 1024px) {
   body main .container .box {
     width: 27vw;
+    height: 55vh;
   }
   body main .container .box .thumb-wrapper .thumb {
     width: 50px;
