@@ -1,4 +1,7 @@
-# pm-possition-challenge
+
+<h1><a href="https://esteecodes.github.io/pm-possition-challenge/pm-vanilla-js/">Finished Project</a></h1>
+
+## pm-possition-challenge
 
 🎉 You are willing to join our lovely Positive Minds family.
 
@@ -6,7 +9,7 @@ We're happy to see creative and enthusiastic people, who can find their way alon
 
 Here is the task to be implemented.
 
-# Fake Product Search
+## Fake Product Search
 
 A one single page or app should be implemented to render some fake product data in a list. The page renders an input field and a search button. In the input field, the number of products to render must be added by the user. Otherwise, an error message is displayed.
 
@@ -18,7 +21,7 @@ For each tile, the main image, additional images, name, price, and tags for the 
 
 ![Search](/design/image002.png)
 
-# Implementation Hints
+## Implementation Hints
 
 - Use the following API to request fake products: https://fakerapi.it/en (scroll down to Products: https://fakerapi.it/api/v1/products?_quantity=1&_taxes=12&_categories_type=uuid)
 - You can implement a single page React app or a static HTML page to fulfill the task
