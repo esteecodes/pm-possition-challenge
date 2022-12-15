@@ -11,26 +11,31 @@ body {
 	overflow-x: hidden;
 
 	main {
-		min-height: 89vh;
         min-width: 80vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+		margin-bottom: 2rem;
 
 		.header {
-			margin: 2rem 0 1rem;
+			margin: 2rem 0 0;
 			text-align: center;
 
 			h1 {
 				margin-bottom: 0;
+			}
+
+			p {
+				font-size: 0.9rem;
+				font-style: italic;
 			}
 		}
 
 
         .search {
             width: 30vw;
-            margin: 2rem auto 3rem;
+            margin: 2rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -69,8 +74,9 @@ body {
 		.container {
 			display: flex;
 			flex-wrap: wrap;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: center;
+			min-height: 54.5vh;
 
 			.message {
 				text-align: center;
