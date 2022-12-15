@@ -76,13 +76,10 @@ function createBox(items) {
 	box.classList.add("box");
 	box.innerHTML = `
 	<img class="mainImage" src="${image}" alt="artificial product"/>
-		<div class="product-info">
-			<p class="product-name">${name}</p>
-			<p class="product-price">${formattedAmount}</p>
-		</div>
 	`;
 	container.appendChild(box);
 
+	// Thumbnails 
 	const thumbsWrapper = document.createElement("div");
 	thumbsWrapper.classList.add("thumbs-wrapper");
 	box.appendChild(thumbsWrapper);
@@ -94,17 +91,27 @@ function createBox(items) {
 		thumbsWrapper.appendChild(thumb);
 	  });
 
-	const productTags = document.createElement("div");
-	productTags.classList.add("product-tags");
-	box.appendChild(productTags);
+	// Product Info 
+	  const productInfo = document.createElement("div");
+	  productInfo.classList.add("product-info");
+	  productInfo.innerHTML = `
+	  <p class="product-name">${name}</p>
+	  <p class="product-price">${formattedAmount}</p>
+	  `
+	  box.appendChild(productInfo);
 
-	tags.forEach(item => {
-		const tag = document.createElement('div');
-		tag.classList.add("tag");
-		tag.innerHTML = item;
-		productTags.appendChild(tag);
-	  });
-
+	  // Product Tags 
+	  const productTags = document.createElement("div");
+	  productTags.classList.add("product-tags");
+	  box.appendChild(productTags);
+  
+	  tags.forEach(item => {
+		  const tag = document.createElement('div');
+		  tag.classList.add("tag");
+		  tag.innerHTML = item;
+		  productTags.appendChild(tag);
+		});
+  
 }
 
 // Clear loaded products
